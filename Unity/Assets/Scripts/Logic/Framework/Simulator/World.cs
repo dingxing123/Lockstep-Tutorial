@@ -67,11 +67,11 @@ namespace Lockstep.Game {
 #if UNITY_STANDALONE_OSX
             _traceLogPath = $"/tmp/LPDemo/Dump_{localPlayerId}.txt";
 #else
-            _traceLogPath = $"c:/tmp/LPDemo/Dump_{Instance.localPlayerId}.txt";
+            _traceLogPath = $"c:/tmp/LPDemo/Dump_{localPlayerId}.txt";
 #endif
             Debug.TraceSavePath = _traceLogPath;
 
-            Debug.Trace("CreatePlayer " + playerCount);
+            _debugService.Trace("CreatePlayer " + playerCount);
             //create Players 
             for (int i = 0; i < playerCount; i++) {
                 var PrefabId = 0; //TODO
